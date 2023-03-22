@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <style>
+        h1{
+          color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello首页</h1>
+    <a th:href="@{/success}">测试@springMVC标识的位置</a><br>
+    <a th:href="@{/demo}">测试@RequestMapping的value属性</a><br>
+    <form th:action="@{/demo}" method="post">
+        <input type="submit" value="测试@RequestMapper的method的属性">
+    </form><br>
+    <a th:href="@{/aaa/ant}">测试springMVC中的ant风格</a><br>
+    <a th:href="@{/text/rest/12/tom}">测试springMVCC支持路径中的占位符</a><br>
+
+    <form th:action="@{/param/servlet}" method="post">
+        <h1>通过HttpServletRequest获取参数</h1>
+        用户名：<input type="text" name="username">
+        密码：<input type="password" name="password">
+        <input type="submit">
+    </form>
+
+    <form th:action="@{/param}" method="post">
+        <h1>
+            通过控制起形参获取参数
+        </h1>
+        用户名：<input type="text" name="userName">
+        密码：<input type="password" name="password">
+        <input type="submit">
+    </form>
+
+    <form th:action="@{/param/user}" method="post">
+        <h1>
+            通过控制器形参user对象获取参数
+        </h1>
+        用户名：<input type="text" name="username">
+        密码：<input type="password" name="password">
+        <input type="radio" name="sex" value="男">男
+        <input type="radio" name="sex" value="女">女
+        <input type="submit">
+    </form>
+
+    <a th:href="@{/mav/text}">通过ModelAndView向请求域中共享数据</a><br>
+    <a th:href="@{/madel/text}">通过Model向请求域中共享数据</a><br>
+    <a th:href="@{/madelMap/text}">通过madelMap向请求域中共享数据</a><br>
+    <a th:href="@{/map/text}">通过map向请求域中共享数据</a><br>
+    <a th:href="@{/session/text}">通过session向会话与请求共享数据</a><br>
+    <a th:href="@{/application/text}">通过application向应用中共享数据</a><br>
+
+    <hr>
+
+    <a th:href="@{/thymeleaf/text}">测试springMVC视图ThymeleafView</a><br>
+    <a th:href="@{/internal/text}">测试springMVC视图InternalResourceView</a><br>
+    <a th:href="@{/redirect/text}">测试springMVC视图RedirectView</a><br>
+</body>
+</html>
